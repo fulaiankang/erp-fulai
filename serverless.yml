@@ -1,0 +1,36 @@
+# 腾讯云 Serverless 配置文件
+component: express
+name: erp-fulai
+
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+      - node_modules/**
+      - client/node_modules/**
+      - server/node_modules/**
+      - '*.log'
+      - .git/**
+  
+  region: ap-guangzhou
+  runtime: Nodejs16.13
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
+    cors: true
+  
+  # 环境变量
+  environment:
+    variables:
+      NODE_ENV: production
+      JWT_SECRET: Gp6uzUi3q5+z2voi1ZGHR2PCoyLzu/jI0p9wqmQnjXI=
+      PORT: 9000
+  
+  # 函数配置
+  functionConf:
+    timeout: 30
+    memorySize: 512
+    installDependency: true
