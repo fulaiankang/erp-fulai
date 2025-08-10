@@ -1,0 +1,40 @@
+# 阿里云函数计算部署配置
+edition: 3.0.0
+name: erp-fulai
+access: default
+
+resources:
+  erp-fulai-app:
+    component: fc3  # 阿里云函数计算3.0
+    props:
+      region: cn-hangzhou  # 杭州地区
+      functionName: erp-fulai-function
+      description: ERP FULAI - Clothing inventory management system
+      runtime: nodejs16
+      code: ./
+      handler: app.handler
+      memorySize: 512
+      timeout: 30
+      
+      # 环境变量
+      environmentVariables:
+        NODE_ENV: production
+        JWT_SECRET: Gp6uzUi3q5+z2voi1ZGHR2PCoyLzu/jI0p9wqmQnjXI=
+        PORT: 9000
+      
+      # HTTP触发器
+      triggers:
+        - triggerName: httpTrigger
+          triggerType: http
+          qualifier: LATEST
+          triggerConfig:
+            authType: anonymous
+            disableURLInternet: false
+            methods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - HEAD
+              - OPTIONS
+
