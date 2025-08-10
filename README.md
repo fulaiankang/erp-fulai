@@ -2,17 +2,19 @@
 
 一个轻量级的服装制造企业ERP解决方案，专注于在线销售库存管理。
 
-## 🚀 快速部署到Vercel
+## 🚀 部署到阿里云
 
 ### 一键部署（推荐）
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/ERP-FULAI)
+1. 访问 [阿里云函数计算控制台](https://fc.console.aliyun.com/)
+2. 创建新服务和应用
+3. 上传代码包或连接GitHub仓库
 
 ### 手动部署步骤
-1. 访问 [vercel.com](https://vercel.com)
-2. 用GitHub账号登录
-3. 点击"New Project"
-4. 导入您的`ERP-FULAI`仓库
-5. 点击"Deploy"
+1. 注册阿里云账号
+2. 开通函数计算服务
+3. 通过控制台部署应用
+
+详细部署指南请参考：[阿里云部署指南.md](./阿里云部署指南.md)
 
 ## ✨ 主要功能
 
@@ -30,7 +32,7 @@
 - **后端**: Node.js + Express
 - **数据库**: SQLite
 - **认证**: JWT
-- **部署**: Vercel
+- **部署**: 阿里云函数计算
 
 ## 📱 响应式设计
 
@@ -53,7 +55,7 @@ npm run build
 
 ## 🌍 在线访问
 
-部署完成后，您可以通过Vercel提供的URL在全球任何地方访问您的ERP系统！
+部署完成后，您可以通过阿里云提供的URL在全球任何地方访问您的ERP系统！
 
 ---
 
